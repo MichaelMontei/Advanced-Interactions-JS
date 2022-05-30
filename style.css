@@ -9,17 +9,21 @@ body{
     overscroll-behavior: none;
 }
 
-.parallax{
-    background-image: url("./images/tim-swaan-eOpewngf68w-unsplash.jpg");
-    min-height: 800px;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+#text1{
+    font-size: 20px;
+    position: absolute;
+    color: white;
+    top: 1040px;
+    left: 150px;
 }
 
 .picture{
     padding: 10px;
+}
+
+.image1, .image2{
+    height: 250px;
+    width: 300px;
 }
 
 .image{
@@ -52,7 +56,8 @@ body{
 
 .carouselContainer{
     background: royalblue;
-    height: 400px;
+    height: 500px;
+    width: 100%;
 }
 
 .title{
