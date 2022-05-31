@@ -9,19 +9,19 @@ body{
     overscroll-behavior: none;
 }
 
-#text1{
-    font-size: 20px;
+.text1{
+    font-size: 30px;
     position: absolute;
-    color: white;
+    color: red;
     top: 1040px;
-    left: 150px;
+    left: -290px;
 }
 
 .picture{
     padding: 10px;
 }
 
-.image1, .image2{
+.image{
     height: 250px;
     width: 300px;
 }
@@ -34,6 +34,15 @@ body{
 .poke{
     font-weight: bold;
 }
+
+#chaser{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    transition: 0.1s;
+    transform: translate(-50%, -50%);
+}
+
 
 .chaser{
     width: 50px;

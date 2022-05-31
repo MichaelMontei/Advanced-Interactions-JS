@@ -15,7 +15,6 @@ document.querySelector(".mode").addEventListener('click', function(){
 
 
 //carousel function + Parallax
-
 let carouselImages = ['./images/tim-swaan-eOpewngf68w-unsplash.jpg', "./images/luca-bravo-ESkw2ayO2As-unsplash.jpg", "./images/tienko-dima-uYoVf9I6ANI-unsplash.jpg", "./images/john-towner-3Kv48NS4WUU-unsplash.jpg"];
 let carousel = document.getElementById("carouselContainer");
 let counter = 0;
@@ -34,30 +33,42 @@ function nextPicture(){
     }else{
         counter = 0;
         carousel.style.backgroundImage = `url(${carouselImages[counter]})`
-
     }
 }
 
+//collage exercise
+const allImages = document.querySelectorAll('.image');
+console.log(allImages);
+for (let i = 0; i < allImages.length; i++){
+    allImages[i].addEventListener('click', myFunction);
+    allImages[i].addEventListener('click', addText);
+    allImages[i].addEventListener('mouseout', resetImg);}
 
-
-
-//Image transform + reset image function
-document.querySelectorAll('.image')[0].addEventListener("click", myFunction);
-//increase the image
-    function myFunction(){
-    let firstImage = document.querySelectorAll('.image')[0];
-    firstImage.style.transform = "scale(1.5)";
-    firstImage.style.transition = "transform 0.25s ease";
-    document.getElementById("text1").innerText = "Aurora Borealis";
-
+//call enlarge function
+function myFunction() {
+    console.log(this);
+    this.style.transform = "scale(1.5)";
+    this.style.transition = "transform 0.25s ease";
 }
 
-//decrease the image
-document.querySelectorAll(".image")[0].addEventListener("mouseout", resetImg);
+//call decrease function
 function resetImg() {
     // Set image size to original
-    document.querySelectorAll(".image")[0].addEventListener("mouseout", resetImg);
-    let firstImage = document.querySelectorAll(".image")[0];
-    firstImage.style.transform = "scale(1)";
-    firstImage.style.transition = "transform 0.25s ease";
+    console.log(this);
+    this.style.transform = "scale(1)";
+    this.style.transition = "transform 0.25s ease";
 }
+
+function addText(){
+   let x = this.alt;
+   document.querySelector('.text1').innerHTML = x;
+}
+
+// circle chasing the mouse
+let cursor = document.getElementById('chaser');
+document.addEventListener('mousemove', function (e){
+    let x = e.clientX;
+    let y = e.clientY;
+    cursor.style.left = x + "px";
+    cursor.style.right = y + "px";
+})
